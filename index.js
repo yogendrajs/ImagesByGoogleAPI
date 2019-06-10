@@ -13,7 +13,7 @@ const SCOPES = ['https://www.googleapis.com/auth/drive.metadata.readonly'];
 // time.
 const TOKEN_PATH = 'token.json';
 
-app.get('/get', (req, rep) => {
+app.get('/', (req, rep) => {
     // Load client secrets from a local file.
     fs.readFile('credentials.json', (err, content) => {
       if (err) return console.log('Error loading client secret file:', err);
@@ -107,7 +107,6 @@ app.get('/get', (req, rep) => {
                     perlink.push(`https://drive.google.com/uc?export=view&id=${allImages[j].id}`);
                   }
                   rep.render('index',{link: perlink, title:"My Images", count: j});
-                  // console.log('----------------');
                 }
               })
             }
