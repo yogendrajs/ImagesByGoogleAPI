@@ -2,7 +2,7 @@ const fs = require('fs');
 const express = require('express');
 const readline = require('readline');
 const {google} = require('googleapis');
-// const ejs = require('ejs');
+
 const app = express();
 app.set('view engine', 'ejs');
 
@@ -122,8 +122,3 @@ app.get('/', (req, rep) => {
 var server = app.listen(3030, () => {
   console.log(`port is listening at ${server.address().port}`)
 })
-
-// listFiles(undefined, 'test.md')
-
-// client_id = '380453615765-eq89hr17ig83kit124vm687db3b3a9cl.apps.googleusercontent.com'
-// client_secret = 'f2fy6c2s_viknf3fCnENcJO0'
